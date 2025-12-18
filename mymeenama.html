@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I Love You Meenama</title>
+
+<style>
+/* 🌸 GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    overflow: hidden;
+}
+
+/* 🔁 PAGES */
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* ===================== */
+/* 💖 PAGE 1 */
+/* ===================== */
+#page1 {
+    background: linear-gradient(to bottom, #fff6e5, #ffe0f0);
+    justify-content: center;
+    align-items: center;
+}
+
+/* ❤️ CENTER TEXT */
+.center-text {
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+    color: #ff4d6d;
+    z-index: 2;
+}
+
+/* ❤️ HEART */
+.heart {
+    font-size: 80px;
+}
+
+/* 🌻 SUNFLOWERS */
+.sunflower {
+    position: absolute;
+    font-size: 40px;
+    animation: float 10s infinite linear;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 💛 NEXT BUTTON */
+.next-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: #ffcc00;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ===================== */
+/* 💌 PAGE 2 */
+/* ===================== */
+#page2 {
+    background: #fff3e0;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* 📜 LETTER STYLE */
+.letter {
+    background: #fffdf5;
+    padding: 50px;
+    max-width: 900px;
+    font-size: 32px;
+    line-height: 1.6;
+    color: #5a3e2b;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================== -->
+<!-- 💖 PAGE 1 -->
+<!-- ===================== -->
+<div class="page active" id="page1">
+
+    <div class="center-text">
+        <div class="heart">❤️</div>
+        I LOVE YOU<br>MEENAMA
+        <div class="heart">❤️</div>
+    </div>
+
+    <div class="next-btn" onclick="goNext()">💛 next</div>
+</div>
+
+<!-- ===================== -->
+<!-- 💌 PAGE 2 -->
+<!-- ===================== -->
+<div class="page" id="page2">
+
+    <div class="letter">
+        My Meenama<br><br>
+
+        I love you so much and I want to spend every single second of my life with you  
+        I want to make you happy  
+        I want to see you cry happy tears  
+        I want to give you coffee when you are tired  
+        I want to give you kisses and hugs every day every hour  
+        till death do us apart  
+
+        I want to grow old with you  
+        laugh with you  
+        sit quietly with you  
+        and love you the same even when our hair turns grey  
+
+        You are my forever  
+        my heart  
+        my home
+    </div>
+
+</div>
+
+<!-- 🌻 SUNFLOWER SCRIPT -->
+<script>
+for (let i = 0; i < 18; i++) {
+    let flower = document.createElement("div");
+    flower.className = "sunflower";
+    flower.innerHTML = "🌻";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (6 + Math.random() * 6) + "s";
+    flower.style.fontSize = (30 + Math.random() * 40) + "px";
+    document.body.appendChild(flower);
+}
+
+/* 🔁 PAGE SWITCH */
+function goNext() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+}
+</script>
+
+</body>
+</html>
